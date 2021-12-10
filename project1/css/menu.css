@@ -1,0 +1,218 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: montserrat;
+  }
+  .banner{
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      transition: all .5s;
+      animation: bgImg 7s linear infinite;
+  }
+  nav{
+      height: 80px;
+      width: 100%;
+      transition: 0.4s; 
+      position: fixed; 
+      width: 100%;
+      top: 0; 
+      z-index: 99
+  }
+  label.logo img{
+      cursor: pointer;
+      width: 150px;
+      height: 70px;
+  }
+  @keyframes bgImg{
+      0%{
+          background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../img/kitchen.jpg);
+      }
+      25%{
+          background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../img/hallroom.jpeg);
+      }
+      50%{
+          background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../img/kitchen.jpg);
+      }
+      75%{
+          background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../img/hallroom.jpeg);
+      }
+      100%{
+          background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../img/kitchen.jpg);
+      }
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+  
+  .nav-content {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      color: white;
+  }
+  .nav-content h1{
+      font-size: 70px;
+      margin-top: 80px;
+  }
+  .nav-content p{
+      margin: 20px auto;
+      font-weight: 100;
+      line-height: 25px;
+      font-size: 24px;
+  }
+  .nav-content h1::selection, .nav-content p::selection{
+      background: orangered;
+  }
+  .nav-content .nav-btn button{
+      width: 200px;
+      padding: 15px 0;
+      text-align: center;
+      margin: 20px 10px;
+      font-weight: bold;
+      border-radius: 25px;
+      border: 2px solid orangered;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+  }
+  .nav-content .nav-btn span{
+      background: orangered;
+      height: 100%;
+      width: 0;
+      border-radius: 25px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      transition: 0.5s;
+  }
+  .nav-content .nav-btn button:hover span{
+      width: 100%;
+  }
+  .nav-content .nav-btn button:hover{
+      border: none;
+  }
+
+  .nav-content h1{
+    width: 100%;
+    animation: typing 7s infinite, blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 45px;
+    color: orangered;
+    text-shadow: 10px 10px 5px black;
+    }
+  
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+  .onscroll{
+      background-color: rgba(255, 69, 0,1);
+      padding: 5px;
+      overflow: hidden;
+  }
+  .onscroll ul li a{
+      font-size: 20px;
+  }
+  .onscroll ul li::after{
+      background-color: aqua;
+  }
+  .onscroll label.logo img{
+    height: 65px;
+  }
+
+  .topic{
+    text-align: center;
+    padding-bottom: 40px;
+    margin-top: 100px;
+    font-size: 40px;
+    color: chocolate;
+    font-weight: 900;
+}
+
+  
+@media (max-width: 952px){
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 858px){
+    .checkbtn{
+      display: block;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      background: none;
+      color: #0082e6;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+  }
